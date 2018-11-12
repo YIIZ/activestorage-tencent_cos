@@ -19,7 +19,7 @@ gem 'activestorage-tencent_cos'
 ```
 
 Edit `config/storage.yml`
-```
+```yaml
 tencent:
   service: TencentCOS
   secret_id: your_secret_id
@@ -33,13 +33,13 @@ tencent:
 ```
 
 Edit `config/environments/production.rb`
-```
+```ruby
 config.active_storage.service = :tencent
 ```
 
 
 ## Tips
 Use cdn url directly
-```
+```ruby
 <%= image_tag book.cover.service_url %>
 ```

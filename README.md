@@ -27,6 +27,7 @@ tencent:
   app_id: your_app_id
   bucket: your_bucket
   region: ap-guangzhou # https://cloud.tencent.com/document/product/436/6224
+  prefix: /folder # prefix save path
   endpoint: https://assets.example.com # your cdn url
   max_age: 3600 # http cache time
 ```

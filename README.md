@@ -7,7 +7,6 @@ It is important to note that this library is still in early stages and is curren
 - only public read bucket is support(HTTP caching purpose)
 - direct upload only
 - delete variants have not yet been implemented
-- download have not yet been implemented
 
 
 ## Usage

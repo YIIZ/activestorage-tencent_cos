@@ -13,8 +13,17 @@ module ActiveStorage
       raise NotImplementedError
     end
 
-    def download(key)
-      raise NotImplementedError
+    def download(key, &block)
+      uri  = URI(url_for(key))
+      if block_given?
+        instrument :streaming_download, key: key do
+          Net::HTTP.get_response(uri, &block)
+        end
+      else
+        instrument :download, key: key do
+          Net::HTTP.get(uri)
+        end
+      end
     end
 
     def download_chunk(key, range)

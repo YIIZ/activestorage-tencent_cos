@@ -94,7 +94,8 @@ module ActiveStorage
       end
 
       def path_for(key)
-        "/#{key}"
+        prefix = config.fetch(:prefix, '')
+        "#{prefix}/#{key}"
       end
 
       def host
